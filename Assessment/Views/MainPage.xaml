@@ -5,11 +5,52 @@
     xmlns:local="using:Assessment"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="using:Assessment.ViewModels"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <viewmodels:MainViewModel />
+    </Page.DataContext>
+
     <Grid>
-        <TextBlock FontSize="90">Hello #futureShapper!<LineBreak/>Show us what you got!!!
-        </TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="12">
+            <Button Content="Add Item" Command="{Binding AddItemCommand}" Margin="0,0,12,0" />
+            <Button Content="Remove Item" Command="{Binding RemoveItemCommand}" />
+        </StackPanel>
+
+        <ListView Grid.Row="1"
+                  ItemsSource="{Binding Items}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Ellipse Grid.Column="0"
+                                 Fill="{Binding Color}"
+                                 Width="16"
+                                 Height="16"
+                                 VerticalAlignment="Center" />
+
+                        <StackPanel Grid.Column="1"
+                                    Orientation="Vertical"
+                                    Margin="12,0,0,0">
+                            <TextBox Header="Name" Text="{Binding Name, Mode=TwoWay}" />
+                            <TextBox Header="Color" Text="{Binding Color, Mode=TwoWay}" />
+                            <TextBox Header="Image" Text="{Binding Image, Mode=TwoWay}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

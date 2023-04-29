@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assessment.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,7 +25,9 @@ namespace Assessment.Views
     {
         public Login()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+            Object[] fields = { Email, Password };
+            DataContext = new LoginViewModel(fields);
         }
     }
 }

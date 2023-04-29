@@ -10,8 +10,7 @@
 
     <Grid HorizontalAlignment="Center" Width="936" VerticalAlignment="Stretch">
         <StackPanel Margin="240, 50, 240,0">
-            <TextBlock Text="Login" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold"/>
-            <Image HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/Assets/StoreLogo.png"/>
+            <Image HorizontalAlignment="Stretch" Height="150" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/Assets/StoreLogo.scale-400.png"/>
             <StackPanel Margin="0,0,0,0">
                 <TextBox Name="Email" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" InputScope="EmailSmtpAddress" PlaceholderText="Email"/>
                 <TextBlock Foreground="#FFC43131" Text="{Binding EmailMessage, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Stretch" FontStyle="Normal"/>
@@ -20,7 +19,10 @@
                 <PasswordBox Name="Password" Password="{Binding Password, Mode=TwoWay}" PlaceholderText="Password"/>
                 <TextBlock Foreground="#FFC43131" Text="{Binding PasswordMessage, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
             </StackPanel>
-            
+            <Button Content="Login" Command="{Binding LoginCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <TextBlock Text="{Binding Message, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,25,0,0"/>
+            <TextBlock Text="@JRC" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,40,0,0"/>
+
 
         </StackPanel>
 
