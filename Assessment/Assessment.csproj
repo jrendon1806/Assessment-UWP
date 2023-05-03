@@ -123,7 +123,7 @@
     <Compile Include="Library\TextBoxEvent.cs" />
     <Compile Include="Models\PropertyChangedNotification.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="ViewModels\Item.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\Login.xaml.cs">
